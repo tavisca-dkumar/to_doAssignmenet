@@ -46,12 +46,7 @@ function toDoTable() {
     }
     function login()
     {
-      let element=document.getElementById("main");
-      let text=document.createElement("input");
-      text.setAttribute("type","text");
-      let name=document.createTextNode("user name");
-      text.appendChild(name);
-      element.appendChild(text);
-      console.log(text);
+      document.getElementById("main").innerHTML='<div class="login" style ="background-color: #dfe3ee"><form><label><b>Username</b></label><input type="text" class="uname" ><br><label ><b>Password</b></label><input type="password" class="name"><br><button type="submit" class="loginButton">Login</button></form></div>';
+      
 
     }
