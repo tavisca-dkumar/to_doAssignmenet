@@ -9,7 +9,7 @@
   }
   .item2 { 
     grid-area: menu;
-    overflow: hidden;
+   
      }
   .item3 { 
     grid-area: main; 
@@ -112,4 +112,10 @@
    }
    .loginButton{
       padding: 10px 50px;
+   }
+   .updatetextbox{
+    padding-top: 0px;
+    padding: 16px 0px;
+    background-color: #dfe3ee;
+    border: 0px
    }
