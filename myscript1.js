@@ -1,10 +1,9 @@
 function toDoTable() {
       console.log("working");
-      document.getElementById("main").innerHTML;  
+      document.getElementById("main").innerHTML='<input type="text" class="search" id ="search"><input type="button" class="add" id="add" value ="add" onclick="addToDo()"><table id="toDoTable"><tr><th>DATE</th><th>TO_DO</th><th>ACTIONS</th></tr></table>';  
     }
     function addToDo(){
       console.log("adddcd");
-      document.getElementById("main").innerHTML;
       let element = document.getElementById("toDoTable");
       let tr=document.createElement("tr");
       let td1=document.createElement("td");
@@ -44,4 +43,15 @@ function toDoTable() {
             let ele=o.parentNode.parentNode;
             ele.parentNode.removeChild(ele);
         }
+    }
+    function login()
+    {
+      let element=document.getElementById("main");
+      let text=document.createElement("input");
+      text.setAttribute("type","text");
+      let name=document.createTextNode("user name");
+      text.appendChild(name);
+      element.appendChild(text);
+      console.log(text);
+
     }
