@@ -1,4 +1,5 @@
 var todo=[];
+var StaticTodo='<input type="text" class="search" list="datalist" id ="search" onkeyup="autoSuggestion(this.value)"><datalist id="datalist"></datalist><input type="button" class="add" id="add" value ="add" onclick="addToDo()"><table id="toDoTable"><tr><th>DATE</th><th>TO_DO</th><th>ACTIONS</th></tr></table>';
 function addingElementToArray(o)
 {
   console.log(o);
@@ -23,10 +24,27 @@ function deletingElementToArray(element)
     todo.splice(index,1);
   
 }
+function autoSuggestion(value)
+{
+  //todoAraayLength=todo.length;
+  document.getElementById('datalist').innerHTML='';
+ // let l=value.length;
+  for(var ele of todo)
+  {
+      if(ele.indexOf(value)>-1)
+      {
+        var node = document.createElement("option"); 
+        var val = document.createTextNode(ele); 
+        node.appendChild(val);
+        document.getElementById("datalist").appendChild(node);
+      }
+  }
+
+}
 
 function toDoTable() {
       console.log("working");
-      document.getElementById("main").innerHTML='<input type="text" class="search" id ="search"><input type="button" class="add" id="add" value ="add" onclick="addToDo()"><table id="toDoTable"><tr><th>DATE</th><th>TO_DO</th><th>ACTIONS</th></tr></table>';  
+      document.getElementById("main").innerHTML=StaticTodo;  
     }
     function createButton(){
       let editButton=document.createElement("input");
@@ -66,6 +84,8 @@ function toDoTable() {
           tr.appendChild(td2);
           tr.appendChild(td3);
           element.appendChild(tr);
+          StaticTodo=document.getElementById("main").innerHTML;
+
         }
     }
     function deleteTodo(o)
